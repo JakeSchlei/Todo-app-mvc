@@ -1,5 +1,12 @@
 const router = require('express').Router();
 const todos = require('../seed/todos');
+const apiRoutes = require('./apiController');
+
+router.use('/api', apiRoutes);
+
+router.get('/', (req, res) => {
+    res.render('signup');
+  });
 
 router.get('/todos', (req, res) => {
     res.render('todos', {
