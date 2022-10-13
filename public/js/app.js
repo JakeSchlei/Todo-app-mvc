@@ -30,6 +30,11 @@ $signUpBtn.addEventListener('click', async (event) => {
         password: passwordInput,
       })
     });
+    
+    const user = await res.json();
+    if (user) {
+        console.log('We made it', user)
+    }
   } catch (error) {
     console.log(error);
   }
